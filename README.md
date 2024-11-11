@@ -19,7 +19,6 @@ This project implements a complete ETL pipeline that:
 │   ├── Load.scala     # Database loading
 │   └── Main.scala     # Pipeline orchestration
 ├── build.sbt          # Project dependencies
-├── data/             # Output data directory
 └── README.md
 ```
 
