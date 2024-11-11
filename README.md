@@ -9,6 +9,19 @@ This project implements a complete ETL pipeline that:
 - Performs complex transformations using Apache Spark
 - Provides both MySQL and CSV output options for analytics
 
+## 🛠️ Technologies Used
+
+- Scala 2.12
+- Apache Spark 3.3.1
+- MySQL
+- balldontlie API
+- Libraries:
+  - requests
+  - ujson
+  - os-lib
+  - play-json
+
+
 ## 📁 Project Structure
 
 ```code
@@ -24,7 +37,7 @@ This project implements a complete ETL pipeline that:
 
 ## 🛠️ Technical Architecture
 
-
+![NBA Data Pipeline Architecture](images/NBA_DIAG.jpeg)
 
 
 ## 🔍 Key Features & Implementation Details
