@@ -37,7 +37,7 @@ This project implements a complete ETL pipeline that:
 
 ## 🛠️ Technical Architecture
 
-![NBA Data Pipeline Architecture](images/NBA_DIAG.jpeg)
+![NBA Data Pipeline Architecture](NBA_DIAG.jpeg)
 
 
 ## 🔍 Key Features & Implementation Details
@@ -102,3 +102,65 @@ def loadToMySQL(spark: SparkSession, df: DataFrame, tableName: String): Unit = {
     .jdbc(url, tableName, connectionProperties)
 }
 ```
+
+## 📊 Data Model
+
+### Input Data Structure
+```json
+{
+  "game": {
+    "id": 123,
+    "home_team": {"id": 24, "full_name": "Phoenix Suns"},
+    "visitor_team": {"id": 14, "full_name": "Los Angeles Lakers"},
+    "home_team_score": 105,
+    "visitor_team_score": 98
+  }
+}
+```
+
+### Output Schema
+```sql
+CREATE TABLE nba_data (
+  match_id INT,
+  team_id INT,
+  team_name VARCHAR(100),
+  game_points INT,
+  total_pts INT,
+  total_reb INT,
+  total_ast INT,
+  total_blk INT,
+  best_scorer VARCHAR(100),
+  best_rebounder VARCHAR(100),
+  best_assist VARCHAR(100),
+  best_blocker VARCHAR(100)
+);
+```
+
+### Quick Start
+
+In order to run the project, here are the steps : 
+
+- Clone the repository :
+  
+```bash
+git clone https://github.com/ezzakibr/nba-data-pipeline.git
+```
+
+
+- Create the MySQL database :
+
+```sql
+CREATE DATABASE NBA_INFOS;
+CREATE USER 'nba_user'@'localhost' IDENTIFIED BY 'password_nba';
+GRANT ALL PRIVILEGES ON NBA_INFOS.* TO 'nba_user'@'localhost';
+```
+- Update your API key
+- Run the program :
+
+```bash
+sbt run
+```
+
+
+
+
