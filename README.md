@@ -161,6 +161,10 @@ GRANT ALL PRIVILEGES ON NBA_INFOS.* TO 'nba_user'@'localhost';
 sbt run
 ```
 
+# Nba Analytics Dashboard
+
+![dashboard](Nba_dashboard.png)
+
 
 
 
